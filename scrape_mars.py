@@ -46,9 +46,9 @@ def scrape():
     time.sleep( 1 )
     tables = pd.read_html(factsurl)
     df = tables[0]
-    df.columns = ['Mars - Earth Comparison', 'Mars', 'Earth']
-    df.set_index('Mars - Earth Comparison', inplace=True)
-    html_table = df.to_html(index = True, header =True)
+    df.columns = ['Mars/Earth', 'Mars', 'Earth']
+    df.set_index('Mars/Earth', inplace=True)
+    html_table = df.reset_index().to_html(index = False)
 
     #___Mars  hemisperes   
     ImageURLs = []
