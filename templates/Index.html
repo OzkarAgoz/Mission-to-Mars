@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mars Data</title>
+    <style>
+            .button {
+            background-color: #1c87c9;
+            border: none;
+            color: white;
+            padding: 20px 34px;
+            text-align: center;
+            text-decoration:wavy;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            cursor: pointer;
+            }
+            </style>
+</head>
+<body>
+
+    <center style="background-color:lightgrey;"><h1>Mission to Mars</h1>
+    <a href="/scrape" class="button">Scrape Recent Info</a></center>
+<br>
+<br>
+<br>
+<div class ="row" id="mars-image">
+        <div class = "col-md-8">
+            <h3>Recent Mars Image</h3>
+            <img src = "{{mars.mars_image}}" alt ="Mars Image">
+        </div>
+        <div class = "col-md-4">
+            <h4>Current Weather on Mars</h4>
+            <p>{{mars.mars_weather}}</p>
+            <h4>Mars Facts</h4>
+            <p>{{mars.mars_facts}}</p>
+        </div>
+</div>
+<div class ="row" id="mars-image">
+    <div class = "col-md-12">
+        <h3>Mars Hemispheres</h3>
+        <img src = "{{mars.mars_hemisphere}}" alt ="Hemispheres">
+    </div>
+</div>
+
+</body>
+</html>
+
