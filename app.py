@@ -17,7 +17,8 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     mars_scrape = mycol.find_one()
-    return render_template("index.html", mars_scrape=mars_scrape)
+    print(mars_scrape)
+    return render_template("index.html", mars_news=mars_scrape['mars_news'], mars_paragraph=mars_scrape['mars_paragraph'], mars_image=mars_scrape['mars_image'], mars_weather=mars_scrape['mars_weather'], mars_facts=mars_scrape['mars_facts'], mars_hemisphere=mars_scrape['mars_hemisphere'])
 
 @app.route("/scrape")     
 def scraper():
