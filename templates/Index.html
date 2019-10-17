@@ -35,16 +35,42 @@
         <div class = "col-md-4">
             <h4>Current Weather on Mars</h4>
             <p>{{mars_weather}}</p>
-            <h4>Mars Facts</h4>
-            <p>{{mars_facts}}</p>
         </div>
 </div>
 <div class ="row" id="mars-image">
     <div class = "col-md-12">
-        <h3>Mars Hemispheres</h3>
-        <img src = {{mars_hemisphere}} alt ="Hemispheres">
+      <h3><b>Mars Facts</b></h3>
+      {{mars.facts | safe }}
     </div>
 </div>
+
+
+<div class="container" style="margin-top:30px;">
+    <h2><b>Mars Hemispheres</b></h2>
+    <div class="row">
+      <div class="col-sm-6">
+        <img src="{{ img.img_url1 }}" alt="this" width="80%">
+      </div>
+      <div class="col-sm-6">
+        <img src="{{ img.img_url2 }}" alt="this" width="80%">
+      </div>
+
+      <div class="container" style="margin-top:30px;">
+
+        <div class="row">
+          <div class="col-sm-6">
+            <img src="{{ img.img_url3 }}" alt="this" width="80%">
+          </div>
+          <div class="col-sm-6">
+            <img src="I{{ img.img_url4 }}" alt="this" width="80%">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
 
 </body>
 </html>
