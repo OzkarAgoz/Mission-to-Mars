@@ -6,7 +6,6 @@ import requests as req
 import time
 import pymongo
 
-
 def init_browser():
     executable_path = {"executable_path": "chromedriver"}
     return Browser("chrome", **executable_path, headless=False)      
@@ -73,9 +72,17 @@ def scrape():
     VallesMarinerisHemisphereEnhanced.click()
     ImageURLs.append(browser.url)
 
+    browser.visit(ImageURLs[0])
+    img_url1 = browser.find_by_text('Sample')['href']
+    browser.visit(ImageURLs[1])
+    img_url2 = browser.find_by_text('Sample')['href']
+    browser.visit(ImageURLs[2])
+    img_url3 = browser.find_by_text('Sample')['href']
+    browser.visit(ImageURLs[3])
+    img_url4 = browser.find_by_text('Sample')['href']
 
     # Mars Info Dictionary
-    scrapeddata = {"mars_news":nntitle,"mars_paragraph":nnparagraph,"mars_image":image_url,"mars_weather":mars_weather,"mars_facts":html_table,"mars_hemisphere":ImageURLs}
+    scrapeddata = {"mars_news":nntitle,"mars_paragraph":nnparagraph,"mars_image":image_url, "mars_weather":mars_weather,"mars_facts":html_table,"mars_hemisphere1":img_url1, "mars_hemisphere2":img_url2, "mars_hemisphere3":img_url3, "mars_hemisphere4":img_url4,  }
 
     browser.quit()
     return scrapeddata
