@@ -17,18 +17,17 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     mars_scrape = mycol.find_one()
-    print(mars_scrape)
     return render_template("index.html", mars_news=mars_scrape['mars_news'], mars_paragraph=mars_scrape['mars_paragraph'], mars_image=mars_scrape['mars_image'], mars_weather=mars_scrape['mars_weather'], mars_facts=mars_scrape['mars_facts'], img_url1=mars_scrape['mars_hemisphere1'], img_url2=mars_scrape['mars_hemisphere2'], img_url3=mars_scrape['mars_hemisphere3'], img_url4=mars_scrape['mars_hemisphere4'])
 
 @app.route("/scrape")     
 def scraper():
-    mars = mycol
+    marsy = mycol
     mars_scrape = scrape_mars.scrape()
-    mars.update({}, mars_scrape, upsert=True)
+    marsy.update({}, mars_scrape, upsert=True)
     return redirect("/", code=302)
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
 
 # Housekeeping codes Test to confirm_
 #checkdata = mycol.find() 
