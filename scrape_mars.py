@@ -73,16 +73,16 @@ def scrape():
     ImageURLs.append(browser.url)
 
     browser.visit(ImageURLs[0])
-    img_url1 = browser.find_by_text('Sample')['href']
+    imgurl1 = browser.find_by_text('Sample')['href']
     browser.visit(ImageURLs[1])
-    img_url2 = browser.find_by_text('Sample')['href']
+    imgurl2 = browser.find_by_text('Sample')['href']
     browser.visit(ImageURLs[2])
-    img_url3 = browser.find_by_text('Sample')['href']
+    imgurl3 = browser.find_by_text('Sample')['href']
     browser.visit(ImageURLs[3])
-    img_url4 = browser.find_by_text('Sample')['href']
+    imgurl4 = browser.find_by_text('Sample')['href']
 
     # Mars Info Dictionary
-    scrapeddata = {"mars_news":nntitle,"mars_paragraph":nnparagraph,"mars_image":image_url, "mars_weather":mars_weather,"mars_facts":html_table,"mars_hemisphere1":img_url1, "mars_hemisphere2":img_url2, "mars_hemisphere3":img_url3, "mars_hemisphere4":img_url4,  }
+    scrapeddata = {"mars_news":nntitle, "mars_paragraph":nnparagraph, "mars_image":image_url, "mars_weather":mars_weather, "mars_facts":html_table, "mars_hemisphere1":imgurl1, "mars_hemisphere2":imgurl2, "mars_hemisphere3":imgurl3, "mars_hemisphere4":imgurl4}
 
     browser.quit()
     return scrapeddata
